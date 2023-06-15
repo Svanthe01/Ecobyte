@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Ecobyte</title>
+        <link  rel="icon"   href="../elementos/lifebyte.png" type="image/png" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../manualidades/utilidades/main.css">      
+        <link rel="stylesheet" href="../Librerias/Bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script type='text/javascript' src="../calculadora/utilidad/jquery.js"></script>         
+    </head>
+    <body>
+        <br><br><br>
+        <header>
+            <center><h2 style="color: black;"><b>GENERADOR DE RECOMPENSAS</b></h2></center>
+        </header>        
+        <form action="altaRecompensa.jsp" id="formi" onsubmit="javascript: return validar()">
+            <div id="slider">
+                <a href="#" class="control_next">►</a>
+                <a href="#" class="control_prev">◄</a>
+                <ul>
+                    <li>
+                        <div id="cont">
+                            <center>
+                                <br><br><br>
+                                <h3>NOMBRE</h3>
+                                <p>Escribe el nombre del artículo de recompensa</p>
+                                <input maxlength="48" type="text" id="nombre" name="nombre"/> 
+                            </center>
+                        </div>
+                    </li>
+                    <li style="background: #aaa;">
+                        <div id="cont">
+                            <center>
+                                <br><br><br>
+                                <h3>COSTO</h3>
+                                <p>Cantidad de puntos necesarios para reclamar el premio</p>
+                                <input type="text" maxlength="4" id="costo" name="costo" class="nom"/>   
+                            </center>
+                        </div>
+                    </li>                    
+                    <li>
+                        <div id="cont">
+                            <center>
+                                <br><br><br>
+                                <h3>DESCRIPCIÓN</h3>
+                                <p>Describe brevemente las características del artículo</p>
+                                <textarea id="desc" name="desc" style="height: 150px;"></textarea><br>
+                            </center>
+                        </div>
+                    </li>
+                    <li style="background: #aaa;">
+                        <div id="cont">
+                            <center>
+                                <br><br><br>
+                                <h3>ARTÍCULOS EN STOCK</h3>
+                                <p>Número de artículos dispnibles</p>
+                                <input type="text" maxlength="3" class="nom" id="stock" name="stock" />
+                            </center>
+                        </div>
+                    </li>
+                    <li>
+                        <div id="cont">
+                            <center>
+                                <br><br><br>
+                                <h3>¡LA RECOMPENSA ESTÁ CASI LISTA!</h3>
+                                <p>¿Estás seguro de que has terminado?, checa que todas
+                                    las entradas estén correctamente llenadas para pasar
+                                    al siguiente paso</p>
+                                <br><br><br>
+                                <button>Siguiente</button>
+                            </center> 
+                        </div>
+                    </li>                    
+                </ul>  
+            </div>
+        </form>
+        <script type="text/javascript" src="utilidades/funciones.js"></script>
+    </body>
+</html>

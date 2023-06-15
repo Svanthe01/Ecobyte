@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Ecobyte</title>
+        <link  rel="icon"   href="../elementos/lifebyte.png" type="image/png" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../manualidades/utilidades/main.css">      
+        <link rel="stylesheet" href="../Librerias/Bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script type='text/javascript' src="../calculadora/utilidad/jquery.js"></script>                 
+    </head>
+    <body>        
+        <br><br><br>
+        <header>
+            <center><h2 style="color: black;"><b>GENERADOR DE RECOMPENSAS</b></h2></center>
+        </header>
+        <form action="altaRecompensa2.jsp" id="formi" enctype="multipart/form-data" method="post">
+            <div id="slider">                
+                <ul>
+                    <li style="background: #aaa;">
+                        <div id="cont">
+                            <center>
+                                <br><br><br>
+                                <h3>SELECCIONA ALGUNA IMAGEN</h3>
+                                <p>La imagen que selecciones aparecerá en la miniatura<br>
+                                de la recompensa, escoge la adecuada</p>
+                                <input type="file" accept="image/*" name="file" id="file" multiple required/>
+                                <br><br><br>
+                                <button>Finalizar</button>
+                            </center>
+                        </div>
+                    </li>
+                    <li>
+                        <div id="cont">
+                            <center>
+                                
+                            </center>
+                        </div>
+                    </li> 
+                </ul>  
+            </div>
+        </form>
+        <script type="text/javascript" src="utilidades/funciones.js"></script>   
+    </body>
+</html>
