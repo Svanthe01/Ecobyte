@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>ECobyte</title>
+        <link  rel="icon"   href="../elementos/lifebyte.png" type="image/png" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="utilidades/main.css">        
+        <script type='text/javascript' src="../calculadora/utilidad/jquery.js"></script>
+    </head>
+    <body>
+        <header>
+            <center><h2 style="color:black;"><b>NUEVA MANUALIDAD</b></h2></center>
+        </header>
+        <form action="altaVideo.jsp" id="formi" enctype="multipart/form-data" method="post">
+            <div id="slider">                
+                <ul>
+                    <li>
+                        <div id="cont">
+                            <center>
+                                <h3>SELECCIONA TU VIDEO</h3>
+                                <p>En este video deberá de ir explicado paso a paso la elaboración
+                                de tu manualidad, ¡no te pases de largo!</p>
+                                <input type="file" accept="video/*" name="file" id="file" required/>
+                                <br><br><br>
+                                <button>Finalizar</button>
+                            </center>
+                        </div>
+                    </li>
+                </ul>  
+            </div>
+        </form>
+        
+    </body>
+</html>

@@ -1,0 +1,175 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+#map { 
+   width: 500px;
+   height: 400px;
+   float:right;
+   box-shadow: 5px 5px 5px #888;
+   z-index: 0;
+}
+#conten{
+   width: 990px;
+   height: 100%;
+   margin: auto;
+}
+#descrip{
+   font-family: Agency FB;
+   font-size: 17px;
+   height:100px;
+   width:440px;
+}
+body{
+   font-family: Agency FB;
+   font-size: 18px;
+   color: #494949;
+}
+#vacio{
+    width:100%;
+    height: 85px;
+    
+}
+#cont{
+    width: 100%;
+    height: auto;
+    background-color: white;
+    
+}
+#nav{
+    width:100%;
+    height: 70px;
+}
+#menu_nav{
+    position: fixed;
+    background-color: black;
+    width:100%;
+    height: 70px;
+    z-index:1;
+}
+
+#main-header {
+    
+    /*background: #333;*/
+    color: white;
+    height: 70px;
+
+    width: 100%; 
+    left: 0; 
+    top: 0; 
+    
+    }	
+#main-header a {
+    color: white;
+    
+}
+nav
+{
+    font-size: 20px;
+    font-family: Agency FB;
+    float: right;
+    
+}
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+}
+	
+nav ul li {
+    display: inline-block;
+    line-height: 70px;
+    float:right;
+}
+			
+nav ul li a {
+    display: block;
+    padding: 0 40px;
+    text-decoration: none;
+}
+			
+nav ul li a:hover {
+    background: gray;
+    height: 70px;
+}
+#logo-header {
+    float: left;
+    padding: 3px 0 0 20px;
+    text-decoration: none;
+    font-family: Agency FB;
+    background-color: black;
+    padding-right: 30px;
+    padding-bottom: 0px;
+}
+#iden{
+    position: relative;
+    z-index:2;
+}
+#logo-header:hover {
+    color: #0b76a6;
+}
+#logo-header .site-name {
+    display: block;
+    font-weight: 700;
+    font-size: 25px;
+    
+    height: 33px;
+    float: top;
+}
+#logo-header .site-desc {
+    display: block;
+    font-weight: 300;
+    font-size: 15px;
+    color: #999;
+    padding-bottom: 3px; 
+    float:top; 
+}
+#main-footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 0px;
+    float:bottom;
+}
+#main-footer p {
+        margin: 0;
+}
+#main-footer a {
+        color: white;
+}
+.dropbtn {
+  cursor: pointer;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  width: 400px;
+  height: auto;
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+#tabb{
+    padding: 0px;
+    margin: 0;
+}
+

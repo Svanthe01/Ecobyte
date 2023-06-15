@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Ecobyte</title>
+        <link  rel="icon"   href="../elementos/lifebyte.png" type="image/png" />
+        <script src="leaflet/leaflet.js"></script>
+        <link rel="stylesheet" href="leaflet/leaflet.css"/>
+        <link rel="stylesheet" href="estilos.css"/>
+        <link rel="stylesheet" href="../Librerias/Bootstrap/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+     </head>
+    <body>
+        <div id="vacio">
+            <div id="nav">
+                <header id="main-header">
+                    
+                    <div id="iden">
+                        <a id="logo-header" href="#">
+                            <span class="site-name">ECOBYTE</span>
+                            <span class="site-desc"><u>by Lifebyte</u></span>
+                        </a>
+                    </div>
+                    <nav id="menu_nav">
+                        <ul>
+                            <li><a href="../pagina/index.html">Sobre nosotros</a></li>
+                            <li>
+                                <div class="dropdown" style="float:right;">
+                                    <a class="dropbtn">¿Eres una empresa?</a>
+                                    <div class="dropdown-content" style="padding: 20px;" >
+                                        <p style="color: #333333; margin: 0px; line-height : 25px;">En Ecobyte te ayudamos a promover tu empresa, registrate de manera gratuita y 
+                                        sé parte de nuesro catálogo de empresas. Tu información será mostrada a nuestros 
+                                        usuarios de forma segura y práctica</p>
+                                        
+                                        <center>
+                                            <button class="noon" onclick="location.href='altaEmp.html'" style="line-height: 25px; border:0; padding:8px; background: gray; color:white; width: 150px;">¡Resgistrate aquí!</button>
+
+                                            <button class="noon" onclick="location.href='iniciarSesion.jsp'" style="margin-left: 40px; line-height: 25px; border:0; padding:8px; background: gray; color:white; width: 130px;">Iniciar sesion</button>
+                                        </center>
+                                    </div> 
+                                   
+                                </div>
+                            </li>
+                            <li><a href="../mapa/MapaInicio.jsp">Mapa</a></li>
+                            <li><a href="../usuarios/registro.jsp">Sesion</a></li>
+                            <li><a href="../index.jsp">Inicio</a></li>
+                        </ul>
+                    </nav>
+                </header>
+            </div>
+            <br><br>
+        </div>
+        <div id="conten">
+            <form action="altaEmp.jsp" name="frm" id="frm">
+                <fieldset>
+                    <br>
+                    <center><h3 style="color: gray;">REGISTRA TU EMPRESA</h3></center>
+                    <br>
+                    <div id="map"></div>
+                    Nombre de la empresa:<br>
+                    <input type="text" maxlength="45" id="nombre" name="nombre" style="width: 400px;" required/>
+                    <br>
+                    <br>
+                    Información sobre tu empresa 
+                    <br>
+                    <textarea name="descrip" id="descrip" maxlenght="200" required></textarea>
+                    <br><br>
+                    Correo electrónico:
+                    <input type="email" id="correo" maxlength="33" name="correo" required/>
+                    <br><br>
+                    Teléfono:
+                    <input class="validanumericos" type="number" id="tel" name="tel" maxlength="14" required/>
+                    <br><br>
+                    ¿Tu empresa compra o recibe basura?<br>
+                    <input type="radio" name="tipo" id="compra" onclick="mostrar(0)" value="comp" required/>
+                    <label for="compra">Compra</label>
+                    <input type="radio" name="tipo" id="recibe" onClick="mostrar(1)" value="reci" required checked="true"/>
+                    <label for="recibe">Solo recibe</label>
+                    <div id="miDIV" style="display:  none; margin-left: 10px;">
+                        <p>¿Qué materiales?</p>
+                        <input type="checkbox" id="plast" name="mate" onclick="activarCasilla(1)" value="plast"/>
+                        <label for="plast">Plástico</label>
+                        <input type="text" id="prePlast" name="prePlast" placeholder="Precio por kilo" 
+                               maxlength="4" style="margin-left: 110px;" class="validanumericos" 
+                               onkeypress="validarSiNumero(this.value)" disabled="tue"/>
+                        <br>
+                        <input type="checkbox" id="pet" name="mate" onclick="activarCasilla(2)" value="pet"/>
+                        <label for="pet">PET</label>
+                        <input type="text" id="prePet" name="prePet" placeholder="Precio por kilo" 
+                               maxlength="4" style="margin-left: 135px;" class="validanumericos" 
+                               onkeypress="validarSiNumero(this.value)" disabled="tue"/>
+                        <br>
+                        <input type="checkbox" id="pap" name="mate" onclick="activarCasilla(3)" value="pap"/>
+                        <label for="pap">Papel</label>
+                        <input type="text" id="prePap" name="prePap" placeholder="Precio por kilo" 
+                               maxlength="4" style="margin-left: 124px;" class="validanumericos" 
+                               onkeypress="validarSiNumero(this.value)" disabled="tue"/>
+                        <br>
+                        <input type="checkbox" id="vid" name="mate" onclick="activarCasilla(4)" value="vid"/>
+                        <label for="vid">Vidrio</label>
+                        <input type="text" id="preVid" name="preVid" placeholder="Precio por kilo" 
+                               maxlength="4" style="margin-left: 122px;" class="validanumericos" 
+                               onkeypress="validarSiNumero(this.value)" disabled="tue"/>
+                        <br>
+                        <input type="checkbox" id="alu" name="mate" onclick="activarCasilla(5)" value="alu"/>
+                        <label for="alu">Alumnio</label>
+                        <input type="text" id="preAlu" name="preAlu" placeholder="Precio por kilo" 
+                               maxlength="4" style="margin-left: 110px;" class="validanumericos" 
+                               onkeypress="validarSiNumero(this.value)" disabled="tue"/>
+                        <br>
+                        <input type="checkbox" id="cob" name="mate" onclick="activarCasilla(6)" value="cob"/>
+                        <label for="cob">Cobre</label>
+                        <input type="text" id="preCob" name="preCob" placeholder="Precio por kilo" 
+                               maxlength="4" style="margin-left: 121px;" class="validanumericos" 
+                               onkeypress="validarSiNumero(this.value)" disabled="tue"/>
+                        <br>
+                        <input type="checkbox" id="cart" name="mate" onclick="activarCasilla(7)" value="cart"/>
+                        <label for="cart">Cartón</label>
+                        <input type="text" id="preCart" name="preCart" placeholder="Precio por kilo" 
+                               maxlength="4" style="margin-left: 116px;" class="validanumericos" 
+                               onkeypress="validarSiNumero(this.value)" disabled="tue"/>
+                        <br>
+                        <input type="checkbox" id="acet" name="mate" onclick="activarCasilla(8)" value="acet"/>
+                        <label for="acet">Aceite</label>
+                        <input type="text" id="preAcet" name="preAcet" placeholder="Precio por litro" 
+                               maxlength="4" style="margin-left: 120px;" class="validanumericos" 
+                               onkeypress="validarSiNumero(this.value)" disabled="tue"/>
+                        <br>
+                        <input type="checkbox" id="ferr" name="mate" onclick="activarCasilla(9)"value="ferr"/>
+                        <label for="ferr">Metales Ferrosos</label>
+                        <input type="text" id="preFerr" name="preFerr" placeholder="Precio por kilo" 
+                               maxlength="4" style="margin-left: 57px;" class="validanumericos" 
+                               onkeypress="validarSiNumero(this.value)" disabled="tue"/>
+                        <br>
+                        <input type="checkbox" id="noFerr" name="mate" onclick="activarCasilla(10)" value="noFerr"/>
+                        <label for="noFerr">Metales no ferrosos</label>
+                        <input type="text" id="preNoFerr" name="preNoFerr" placeholder="Precio por kilo" 
+                               maxlength="4" style="margin-left: 41px;" class="validanumericos" 
+                               onkeypress="validarSiNumero(this.value)" disabled="tue"/>
+                        <br>
+                        <input type="checkbox" id="texles" name="mate" onclick="activarCasilla(11)" value="texles"/>
+                        <label for="texles">Textiles</label>
+                        <input type="text" id="preTexles" name="preTexles" placeholder="Precio por kilo" 
+                               maxlength="4" style="margin-left: 112px;" class="validanumericos" 
+                               onkeypress="validarSiNumero(this.value)" disabled="tue"/>
+                    </div>
+                    <div id="otroDIV">
+                        <p>¿Qué materiales?</p>
+                        <input type="checkbox" id="acetAut" name="mate2" value="acetAut"/>
+                        <label for="acetAut"> Aceite de auto</label>
+                        <br>
+                        <input type="checkbox" id="acetCoc" name="mate2" value="acetCoc"/>
+                        <label for="acetCoc"> Aceite de cocina</label>
+                        <br>
+                        <input type="checkbox" id="toner" name="mate2" value="toner"/>
+                        <label for="toner"> Cartuchos de toner</label>
+                        <br>
+                        <input type="checkbox" id="residConst" name="mate2" value="residConst"/>
+                        <label for="residConst"> Residuos de construcción</label>
+                        <br>
+                        <input type="checkbox" id="elec" name="mate2" value="elec"/>
+                        <label for="elec"> Dispositivos electrónicos</label>
+                        <br>
+                        <input type="checkbox" id="tetra" name="mate2" value="tetra"/>
+                        <label for="tetra"> Tetrapack</label>
+                        <br>
+                        <input type="checkbox" id="focos" name="mate2" value="focos"/>
+                        <label for="focos"> Focos</label>
+                        <br>
+                        <input type="checkbox" id="medic" name="mate2" value="medic"/>
+                        <label for="medic"> Medicamentos</label>
+                        <br>
+                        <input type="checkbox" id="baterias" name="mate2" value="baterias"/>
+                        <label for="baterias"> Baterias</label>
+                        <br>
+                        <input type="checkbox" id="pintura" name="mate2" value="pintura"/>
+                        <label for="pintura"> Pintura</label>
+                        <br>
+                        <input type="checkbox" id="orgas" name="mate2" value="orgas"/>
+                        <label for="orgas"> Residuos orgánicos</label>
+                        <br>
+                        <input type="checkbox" id="sanit" name="mate2" value="sanit"/>
+                        <label for="sanit"> Desechos sanitarios</label>
+                        <br>
+                        <input type="checkbox" id="vidrio" name="mate2" value="vidrio"/>
+                        <label for="vidrio"> Vidrio</label>
+                        <br>
+                        <input type="checkbox" id="varios" name="mate2" value="varios"/>
+                        <label for="varios"> Películas DVD, VHS, Beta, radiografías, discos MP3, CD’s.</label>
+                        <br>
+                        <input type="checkbox" id="unicel" name="mate2" value="unicel"/>
+                        <label for="unicel"> Unicel</label>   
+                    </div>
+                    <br><br>
+                    <small style="color:blue;">*Opcional</small>
+                    <br>
+                    Página de la empresa: <input type="text" id="enlace" name="enlace" placeholder="Enlace" maxlength="20"/>
+                    <br><br>
+                    Contraseña: <input type="password" id="pass" placeholder="8 caracteres" name="pass" maxlength="8" required/>
+                    <br><br>
+                    <button onclick="cosa()" id="bottt">Enviar</button><input type="text" style="visibility: hidden;" id="oculto" name="oculto" />
+                    <br>
+                </fieldset>
+            </form>
+            <br><br>
+            <script src="codjs.js"></script>
+        </div>
+        <footer id="main-footer">
+            <p>&copy; 2019 LifeByte S.A. de C.V.</p>
+            <p>De acuerdo a las leyes de la aerodinámica, es imposible que una abeja vuele</p>
+            <p>La abeja, de todos modos, vuela porque no le importa lo que los humanos piensen</p>
+            <br><br>
+        </footer>
+    </body> 
+ </html>

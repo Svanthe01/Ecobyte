@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+
+pearl jam - light years
+audioslave - i am the highway
+-->
+<html>
+    <head>
+        <title>Ecobyte</title>
+        <link  rel="icon"   href="../elementos/lifebyte.png" type="image/png" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="utilidades/main.css">        
+        <script type='text/javascript' src="../calculadora/utilidad/jquery.js"></script>
+    </head>
+    <body>
+        <header>
+            <center><h2 style="color:black;"><b>NUEVA MANUALIDAD</b></h2></center>
+        </header>
+        <form action="altaMan.jsp" id="formi" onsubmit="javascript: return validar()">
+            <div id="slider">
+                <a href="#" class="control_next">►</a>
+                <a href="#" class="control_prev">◄</a>
+                <ul>
+                    <li style="background: #aaa;">
+                        <div id="cont">
+                            <h3>NOMBRE</h3>
+                            <p>Cada idea tiene un autor, ¿cuál es tu nombre?</p>
+                            <input maxlength="55" type="text" id="nombre" name="nombre"/> 
+                        </div>
+                    </li>
+                    <li>
+                        <div id="cont">
+                            <h3>TÍTULO</h3>
+                            <p>Dinos de qué trata tu manualidad</p>
+                            <input maxlength="55" type="text" id="titulo" name="titulo"/>   
+                        </div>
+                    </li>
+                    <li style="background: #aaa;">
+                        <div id="cont">
+                            <h3>CATEGORÍA</h3>
+                            <p>¿A qué categoría pertenece esta manualidad?</p>
+                            <input type="radio" id="plastico" name="mate" value="Plastico"/>
+                            <label for="plastico">Plástico </label>
+                            <br>
+                            <input type="radio" id="papel" name="mate" value="Papel"/>
+                            <label for="papel">Papel </label>
+                            <br>
+                            <input type="radio" id="vidrio" name="mate" value="Vidrio"/>
+                            <label for="vidrio">Vidrio </label>
+                            <br>
+                            <input type="radio" id="carton" name="mate" value="Carton"/>
+                            <label for="carton">Carton </label>
+                            <br>                
+                            <input type="radio" id="otro" name="mate" value="Otro"/>
+                            <label for="otro">Otro </label>
+                            <br>
+                        </div>
+                    </li>
+                    <li>
+                        <div id="cont">
+                                <h3>MATERIALES</h3>
+                                <p>¿Qué materiales vas a utilizar?</p>
+                                Material/cantidad
+                                <br>
+                                <input type="text" id="uno" name="uno" placeholder="ej. Papel"/>
+                                <input style="width: 150px;" type="text" id="unoc" name="unoc" class="num" placeholder="12cmx10cm">
+                                <br>
+                                <input type="text" id="dos" name="dos"/>
+                                <input style="width: 150px;" type="text" id="dosc" name="dosc" class="num">
+                                <br>
+                                <input type="text" id="tres" name="tres"/>
+                                <input style="width: 150px;" type="text" id="tresc" name="tresc" class="num">
+                                <br>
+                                <input type="text" id="cuatro" name="cuatro"/>
+                                <input style="width: 150px;" type="text" id="cuatroc" name="cuatroc" class="num">
+                                <br>
+                                <input type="text" id="cinco" name="cinco"/>
+                                <input style="width: 150px;" type="text" id="cincoc" name="cincoc" class="num">
+                                <br>
+                                <input type="text" id="seis" name="seis"/>
+                                <input style="width: 150px;" type="text" id="seisc" name="seisc" class="num">
+                                <br>
+                                <input type="text" id="siete" name="siete"/>
+                                <input style="width: 150px;" type="text" id="sietec" name="sietec" class="num">
+                                <br>
+                                <input type="text" id="ocho" name="ocho"/>
+                                <input style="width: 150px;" type="text" id="ochoc" name="ochoc" class="num">
+                                <br>
+                                <input type="text" id="nueve" name="nueve"/>
+                                <input style="width: 150px;" type="text" id="nuevec" name="nuevec" class="num">
+                                <br>
+                                <input type="text" id="diez" name="diez"/>
+                                <input style="width: 150px;" type="text" id="diezc" name="diezc" class="num">
+                                <br>
+                                <input type="text" id="once" name="once"/>
+                                <input style="width: 150px;" type="text" id="oncec" name="oncec" class="num">
+                                <br>
+                        </div>
+                    </li>
+                    <li style="background: #aaa;">
+                        <div id="cont">
+                            <h3>DESCRIPCIÓN</h3>
+                            <p>Describe brevemente la elaboración de tu manualidad</p>                
+                            <p>Paso uno</p>
+                            <textarea id="parr1" name="parr1"></textarea><br>
+
+                            <br>
+                            <p>Paso dos</p>
+                            <textarea id="parr2" name="parr2"></textarea><br>
+
+                            <br>
+                            <p>Paso tres</p>
+                            <textarea id="parr3" name="parr3"></textarea><br>
+
+                            <br>
+                            <p>Paso cuatro</p>
+                            <textarea id="parr4" name="parr4"></textarea><br>
+
+                            <br>
+                            <p>Paso cinco</p>
+                            <textarea id="parr5" name="parr5"></textarea><br>
+
+                            <br>
+                            <p>Paso seis</p>
+                            <textarea id="parr6" name="parr6"></textarea><br>              
+
+                            <br>
+                            <p>Paso siete</p>
+                            <textarea id="parr7" name="parr7"></textarea><br>                
+
+                            <br>
+                            <p>Paso ocho</p>
+                            <textarea id="parr8" name="parr8"></textarea><br>                
+
+                            <br>                
+                            <p>Paso nueve</p>
+                            <textarea id="parr9" name="parr9"></textarea><br>            
+
+                            <br>
+                            <p>Paso diez</p>
+                            <textarea id="parr10" name="parr10"></textarea><br>
+
+                            <br>      
+                        </div>
+                    </li>
+                    <li>
+                        <div id="cont">
+                            <center>
+                                <h3>¡TU MANUALIDAD ESTÁ CASI LISTA!</h3>
+                                <p>¿Estás seguro de que has terminado?, checa que todas
+                                    las entradas estén correctamente llenadas para pasar
+                                    al siguiente paso</p>
+                                <br><br><br>
+                                <button>Siguiente</button>
+                            </center>
+                        </div>
+                    </li>
+                </ul>  
+            </div>
+        </form>
+        <script type="text/javascript" src="utilidades/funciones.js"></script>
+    </body>
+</html>
